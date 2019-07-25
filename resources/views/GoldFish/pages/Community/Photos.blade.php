@@ -12,7 +12,7 @@
         <figure class="photo">
           <div class="image" style="background-image:url({{$photo->url}})">
             <div class="bottom">
-              {{date('d/m/y h:i', $photo->timestamp)}}
+              {{date('d/m/y H:i', $photo->timestamp)}}
             </div>
           </div>
           <div class="user_info">
