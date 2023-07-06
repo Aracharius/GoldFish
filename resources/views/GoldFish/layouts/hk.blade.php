@@ -6,14 +6,15 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{CMSHelper::settings('hotelname')}} - @yield('title')</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="{{ asset('goldfish/css/goldfish.css') }}" rel="stylesheet">
-    <link href="{{ asset('admin/css/housekeeping.css') }}" rel="stylesheet">
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <link href="{{ asset('goldfish/css/goldfish.css') }}?v={{CMSHelper::settings('cacheVar')}}" rel="stylesheet">
+    <link href="{{ asset('admin/css/housekeeping.css') }}?v={{CMSHelper::settings('cacheVar')}}" rel="stylesheet">
+    <script src="{{ asset('js/app.js') }}?v={{CMSHelper::settings('cacheVar')}}" defer></script>
     <script
   src="https://code.jquery.com/jquery-3.4.0.min.js"
   integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
   crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="container">
@@ -29,6 +30,7 @@
           @if(CMSHelper::fuseRights('moderation'))
           <li id="user" @if($group == 'user') class="active" @endif><a href="{{ route('hk_chat_list') }}">Users & Moderation</a></li>
           @endif
+          <li id="credits" @if($group == 'credits') class="active" @endif><a href="{{ route('credits') }}">GoldFishCMS</a></li>
           <li id="back"><a href="{{ route('me') }}">Back to Site</a></li>
         </ul>
       </div>

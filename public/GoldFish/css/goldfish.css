@@ -6,7 +6,6 @@ body {
 #page-wrap, html {
 	min-height: 100%;
 	position: relative;
-	padding-bottom: 25px;
 }
 .relative {
 	position: relative;
@@ -145,6 +144,21 @@ p.duckets {
 	background-position:0px -113px;
 	height: 23px;
 }
+p.achievement {
+	background-image: url(/goldfish/images/achievements.gif);
+	background-size: 17px 28px;
+	height:28px;
+}
+p.timeon {
+	background-image: url(/goldfish/images/onlinetime.gif);
+	height:28px;
+	padding-left:30px;
+}
+p.respects {
+	background-image: url(/goldfish/images/respects.gif);
+	background-position: 5px 5px;
+	height:28px;
+}
 .header .purse:before {
 	border-color: transparent transparent transparent rgba(0,0,0,.6);
 	border-style: solid;
@@ -224,23 +238,18 @@ p.duckets {
 .left {
 	float:left;
 }
-.footer {
-	position: absolute;
-	bottom:0;
-	background: #001726;
-	width:100%;
-	color:#fff;
-	height:70px;
-	line-height: 60px;
+footer.home {
+    background-color: #b6b6b6;
+    background-image: url(/goldfish/images/goldfish.png);
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px 0;
 }
-.footer .left,.footer .right {
-	padding-top: 8px;
-}
-.footer .right {
-	background-image: url(/goldfish/images/goldfish.png);
-	background-repeat: no-repeat;
-	background-position:left center;
-	padding-left:55px;
+footer.home a {
+    color: #666;
 }
 .box {
 	border:1px solid rgba(0,0,0,.3);
@@ -838,6 +847,9 @@ width:100%;
 .box.profile.profile.friends:before {
 	background-image:url(/goldfish/images/profile/friends.png);
 }
+.box.profile.profile.groups:before {
+	background-image:url(/goldfish/images/profile/groups.png);
+}
 .box.profile.profile{
 	height:315px;
 }
@@ -905,9 +917,87 @@ figure.photo.profile:after  {
 }
 .alert.item{
 	position: relative;
+	min-height: 50px;
 }
 .alert.item a.close{
 	right: 5px;
 	position: absolute;
 	font-size: 13px;
+	top:5px;
+}
+.alert.item img {
+	float:left;
+}
+.alert.item span{
+	display:block;
+	width:98%;
+}
+.habbos {
+    overflow: unset;
+}
+span.ahabbo {
+    display: block;
+    position: relative;
+}
+span.ahabbo .legacy-tooltip {
+    position: absolute;
+    border-radius: 5px;
+    border: 2px solid #000;
+    background: #fff;
+    display: none;
+    padding: 10px;
+    left: 100%;
+    font-size: 11px;
+    width: 170px;
+    z-index: 10;
+}
+span.ahabbo .legacy-tooltip span:nth-child(1) {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+}
+span.ahabbo:hover .legacy-tooltip {
+    display: block;
+}
+.content.habbogrid {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+}
+.topStory-box {
+	height: 300px;
+	position: relative;
+	margin-bottom:10px;
+}
+.box.news.topStory-slider {position: absolute;width: 100%;height: 295px;}
+.box.news.topStory-slider a.news_link {
+	position: absolute;
+	width: 100%;
+	height: 300px;
+}
+.box.news.topStory-slider figure {
+	padding:5px 15px;
+	position: absolute;
+	width: 100%;
+}
+.box.news.topStory-slider h4 {
+	color:#fff;
+	margin-top:10px;
+	margin-bottom:0;
+	width: 230px;
+}
+.box.news.topStory-slider h4, .box.news.topStory-slider .meta, .box.news.topStory-slider .desc {
+	position: relative;
+	margin-left: 15px;
+	color:#fff;
+}
+.box.news.topStory-slider .meta {
+	font-size: 11px;
+	color: #999;
+ }
+.box.news.topStory-slider a {
+	color:#fff;
+	text-decoration: none;
+}
+.box.news.topStory-slider .desc {
+font-size: 14px;
 }

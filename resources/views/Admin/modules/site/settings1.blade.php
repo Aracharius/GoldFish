@@ -45,6 +45,28 @@
                  <option @if(CMSHelper::settings('theme') == 'legacy') selected @endif value="legacy">Legacy</option>
                </select>
              </div>
+             <div class="form-group">
+                <label for="title">Site Maintenance</label>
+                <select name="maintenance">
+                  <option @if(CMSHelper::settings('maintenance') == 1) selected @endif value="1">True</option>
+                  <option @if(CMSHelper::settings('maintenance') == 0) selected @endif value="0">False</option>
+                </select>
+             </div>
+              <div class="form-group">
+                <label for="title">Maintenance Minimum Rank</label>
+                <select name="maintenance_rank">
+                    @foreach($permissions as $row)
+                    <option value="{{$row->id}}" @if(CMSHelper::settings('maintenance_rank') == $row->id) selected @endif>{{$row->rank_name}}</option>
+                    @endforeach
+                  <select>
+              </div>
+              <div class="form-group">
+                <label for="title">GoldFish Theme News box</label>
+                <select name="gf_news">
+                  <option @if(CMSHelper::settings('goldfish_cards') == 1) selected @endif value="1">Cards</option>
+                  <option @if(CMSHelper::settings('goldfish_cards') == 0) selected @endif value="0">Slider</option>
+               </select>
+             </div>
           </div>
         </div>
       </div>
@@ -55,5 +77,18 @@
       </div>
       @csrf
     </form>
+  </div>
+  <div class="box_4">
+    <div class="heading">@yield('title')</div>
+    <div class="content">
+      <div class="row justify-content-center">
+          <div class="col-md-12">
+            <div class="form-group text-center">
+              <label>Current cache variable: {{CMSHelper::settings('cacheVar')}}</label>
+              <button class="full" onclick="window.location.href='/housekeeping/site/settings1?cache'">Clear Cache</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

@@ -2,15 +2,9 @@
   <div class="plate">
     <img src="{{CMSHelper::settings('habbo_imager')}}{{ Auth::user()->look }}">
   </div>
-  @if(CMSHelper::hotelstatus() == '1')
-  <a class="enter_hotel offline" href="#" target="_blank">
-    Hotel is offline
-  </a>
-  @else
   <a class="enter_hotel" href="{{ route('client') }}" target="_blank">
     Enter {{CMSHelper::settings('hotelname')}}
   </a>
-  @endif
   <div class="habbo-info">
     <div class="motto"><strong>{{ Auth::user()->username }}:</strong> {{ Auth::user()->motto }}</div>
   </div>
@@ -20,7 +14,7 @@
       <img src="{{CMSHelper::settings('c_images')}}album1584/{{$row->icon}}.gif"/>
       <span>{{$row->message}}</span>
         @if($row->userid == Auth::user()->id)
-        <a class="close" href="?delete={{$row->id}}">X</a>
+        <a class="close" href="me/delete/{{$row->id}}">X</a>
         @endif
     </div>
     @endforeach

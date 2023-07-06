@@ -5,7 +5,6 @@ use Request;
 use Illuminate\Http\Request as Req;
 use App\Http\Controllers\Controller;
 use App\Helpers\CMS;
-use App\Helpers\Rcon;
 use App\Models\Hotel\EmuSettings;
 
 class Emulator extends Controller
@@ -19,15 +18,21 @@ class Emulator extends Controller
         foreach($key as $row) {
           EmuSettings::where('key', $row['name'])->update(['value' => $row['value']]);
         }
+        \App\Models\CMS\Hk::create([
+          'user_id' => auth()->user()->id,
+          'ip' => request()->ip(),
+          'action' => 'Made changes to the EMU Settings',
+          'timestamp' => time()
+        ]);
         return redirect()->back()->withSuccess('Saved settings!');
       }
       $form = EmuSettings::all();
 
-      return view('server.emulator',
-      [
-        'group' => 'server',
-        'form' => $form
-      ]);
+      return view('server.emulator', [
+          'group' => 'server',
+          'form'  => $form
+        ]
+      );
     }
     else {
       return redirect('housekeeping/dashboard');

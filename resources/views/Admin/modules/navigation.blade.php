@@ -32,8 +32,24 @@
     @if(CMSHelper::fuseRights('server_vouchers'))
     <li><a href="{{ route('hk_server_vouchers') }}">Voucher Codes</a></li>
     @endif
+    @if(CMSHelper::fuseRights('server_wordfilter'))
+    <li><a href="{{ route('hk_wordfilter') }}">WordFilter</a></li>
+    @endif
     @if(CMSHelper::fuseRights('server_rcon'))
     <li><a href="{{ route('hk_server_rcon') }}">RCON</a></li>
+    @endif
+  </ul>
+</div>
+@endif
+@if(CMSHelper::fuseRights('navi_server_logging'))
+<div class="box_3">
+  <div class="heading">Users</div>
+  <ul>
+    @if(CMSHelper::fuseRights('server_logging'))
+    <li><a href="{{ route('hk_server_logs', ['hk']) }}">Housekeeping</a></li>
+    @endif
+    @if(CMSHelper::fuseRights('server_logging'))
+    <li><a href="{{ route('hk_server_logs', ['commands']) }}">Commands</a></li>
     @endif
   </ul>
 </div>
@@ -49,6 +65,9 @@
     @endif
     @if(CMSHelper::fuseRights('site_settings_social'))
     <li><a href="{{ route('hk_settings2') }}">Social</a></li>
+    @endif
+    @if(CMSHelper::fuseRights('site_rights'))
+    <li><a href="{{ route('hk_rights') }}">FuseRights</a></li>
     @endif
   </ul>
 </div>
@@ -94,6 +113,9 @@
   <ul>
     @if(CMSHelper::fuseRights('moderation_badges'))
     <li><a href="{{ route('hk_user_badges') }}">Give a Badge</a></li>
+    @endif
+    @if(CMSHelper::fuseRights('moderation_password'))
+    <li><a href="{{ route('hk_users_password') }}">Reset Password</a></li>
     @endif
   </ul>
 </div>

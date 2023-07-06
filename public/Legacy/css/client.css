@@ -23,7 +23,62 @@ embed {
   background: #000;
 }
 .loader {
-  background-image: url(/legacy/images/grid.png);
+  background-image: url(/legacy/images/grid.png),
+                    url(/legacy/images/loading/right.png),
+                    url(/legacy/images/loading/hotel.png),
+                    url(/legacy/images/loading/habbos.png),
+                    url(/legacy/images/loading/clouds.png),
+                    url(/legacy/images/loading/jump.png),
+                    url(/legacy/images/loading/room_o_matic.png),
+                    url(/legacy/images/loading/tub.png),
+                    url(/legacy/images/loading/barrier.png),
+                    url(/legacy/images/loading/cactus.png),
+                    url(/legacy/images/loading/dining.png),
+                    url(/legacy/images/loading/rooms.png),
+                    url(/legacy/images/loading/crocs.png),
+                    url(/legacy/images/loading/bed.png?),
+                    url(/legacy/images/loading/coffee.png),
+                    url(/legacy/images/loading/chair.png),
+                    url(/legacy/images/loading/battle_ball.png),
+                    url(/legacy/images/loading/tv.png),
+                    url(/legacy/images/loading/pizza.png);
+  background-position: left bottom,
+                       right top,
+                       7% top,
+                       60% 70%,
+                       80% 30%,
+                       82% 28%,
+                       87% 43%,
+                       63% 85%,
+                       78% 50%,
+                       80% 78%,
+                       75% 92%,
+                       55% 5%,
+                       30% 52%,
+                       35% 95%,
+                       50% 95%,
+                       48% 76%,
+                       left calc(100% - 2px),
+                       30% 40%,
+                       23% 80%;
+  background-repeat:  repeat,
+                      no-repeat,
+                      no-repeat,
+                      no-repeat,
+                      no-repeat,
+                      no-repeat,
+                      no-repeat,
+                      no-repeat,
+                      no-repeat,
+                      no-repeat,
+                      no-repeat,
+                      no-repeat,
+                      no-repeat,
+                      no-repeat,
+                      no-repeat,
+                      no-repeat,
+                      no-repeat,
+                      no-repeat,no-repeat;
   background-color: #000;
   position: absolute;
   z-index:1;
@@ -183,4 +238,44 @@ body.error .disconnected {
   margin: auto;
   font-size: 16px;
   padding:5px 15px;
+}
+.onlineCounter {
+  background-color: rgba(40,40,40,0.65);
+  height: 26px;
+  width: 170px;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: rgba(255,255,255,0.20);
+  border-style: solid;
+  left:2px;
+  top:2px;
+  position: absolute;
+  z-index: 5;
+  padding-left: 35px;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.70), 1px 0px 0px 0px rgba(0,0,0,0.70), -1px 0px 0px 0px rgba(0,0,0,0.70);
+  -moz-box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.70),1px 0px 0px 0px rgba(0,0,0,0.70),-1px 0px 0px 0px rgba(0,0,0,0.70);
+  box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.70), 1px 0px 0px 0px rgba(0,0,0,0.70), 0px 0px 0px 1px rgba(0,0,0,0.70);
+}
+.onlineCounter span{
+color: white;
+font-family: Ubuntu,sans-serif;
+line-height: 24px;
+}
+.onlineCounter:before {
+top: -2px;
+bottom: 0;
+left: -2px;
+right: 0;
+position: absolute;
+content: '';
+background-color: #3ba800;
+background-image:url('/images/icon.gif');
+background-repeat: no-repeat;
+background-position: center;
+image-rendering:pixelated;
+width: 24px;
+border-radius: 5px;
+height: 100%;
+border: 2px solid #349400;
 }

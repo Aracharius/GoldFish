@@ -1,7 +1,11 @@
 <?php
 
 return [
-
+    'debug_blacklist' => [
+        '_COOKIE' => array_keys($_COOKIE),
+        '_SERVER' => array_keys($_SERVER),
+        '_ENV' => array_keys($_ENV),
+    ],
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -101,7 +105,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | This locale will be used by the Faker PHP library when generating fake
-    | data for your database seeds. For example, this will be used to get
+    | data for your database seeders. For example, this will be used to get
     | localized telephone numbers, street address information and more.
     |
     */
@@ -231,9 +235,9 @@ return [
         'Banned' => App\Http\Middleware\Banned::class,
         'Findretros' => App\Http\Middleware\Findretros::class,
         'installer' => App\Http\Middleware\installer::class,
-        'changeTheme' => App\Http\Middleware\changeTheme::class
+        'changeTheme' => App\Http\Middleware\changeTheme::class,
+        'Maintenance' => App\Http\Middleware\Maintenance::class
 
     ],
-    'version_number' => '1.0.3'
-
+    'version_number' => '1.4.0'
 ];
